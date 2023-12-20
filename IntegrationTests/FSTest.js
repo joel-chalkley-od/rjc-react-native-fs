@@ -9,7 +9,7 @@ var {
   Text,
   View,
 } = React;
-var RNFS = require('react-native-fs');
+var RNFS = require('rjc-react-native-fs');
 var DEBUG = false;
 
 

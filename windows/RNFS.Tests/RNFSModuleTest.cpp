@@ -7,7 +7,7 @@
 
 namespace ReactNativeTests {
 
-    std::string testLocation = "C:/react-native-fs-test-folder\\";
+    std::string testLocation = "C:/rjc-react-native-fs-test-folder\\";
 
     TEST_CLASS(RNFSManagerTest) {
         React::ReactModuleBuilderMock m_builderMock{};

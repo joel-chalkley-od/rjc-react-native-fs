@@ -1,4 +1,4 @@
-package com.rnfs;
+package com.rjcrnfs;
 
 import com.facebook.react.bridge.ReadableMap;
 

@@ -23,7 +23,7 @@ import {
 } from 'react-native';
 
 
-import RNFS from 'react-native-fs';
+import RNFS from 'rjc-react-native-fs';
 //import {Picker} from '@react-native-community/picker';
 
 import {

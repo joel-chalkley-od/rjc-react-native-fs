@@ -4,6 +4,8 @@ Native filesystem access for react-native
 
 ## IMPORTANT
 
+For AGP >= 7 MUST install rjc-react-native-fs at version @2.21.0!
+
 For RN < 0.57 and/or Gradle < 3 you MUST install react-native-fs at version @2.11.17!
 
 For RN >= 0.57 and/or Gradle >= 3 you MUST install react-native-fs at version >= @2.13.2!
@@ -27,10 +29,10 @@ View the changelog [here](https://github.com/itinance/react-native-fs/blob/maste
 
 ## Usage (iOS/macOS)
 
-First you need to install react-native-fs:
+First you need to install rjc-react-native-fs:
 
 ```
-npm install react-native-fs --save
+npm install rjc-react-native-fs --save
 ```
 
 **Note:** If your react-native version is < 0.40 install with this tag instead:
@@ -41,14 +43,6 @@ npm install react-native-fs@2.0.1-rc.2 --save
 
 As @a-koka pointed out, you should then update your package.json to
 `"react-native-fs": "2.0.1-rc.2"` (without the tilde)
-
-### Adding automatically with react-native link
-
-At the command line, in your project folder, type:
-
-`react-native link react-native-fs`
-
-Done! No need to worry about manually adding the library to your project.
 
 ###  Adding with CocoaPods
 
@@ -65,9 +59,9 @@ pod install
 
 ### Adding Manually in XCode
 
-In XCode, in the project navigator, right click Libraries ➜ Add Files to [your project's name] Go to node_modules ➜ react-native-fs and add the .xcodeproj file
+In XCode, in the project navigator, right click Libraries ➜ Add Files to [your project's name] Go to node_modules ➜ rjc-react-native-fs and add the .xcodeproj file
 
-In XCode, in the project navigator, select your project. Add the `lib*.a` from the RNFS project to your project's Build Phases ➜ Link Binary With Libraries. Click the .xcodeproj file you added before in the project navigator and go the Build Settings tab. Make sure 'All' is toggled on (instead of 'Basic'). Look for Header Search Paths and make sure it contains both `$(SRCROOT)/../react-native/React` and `$(SRCROOT)/../../React` - mark both as recursive.
+In XCode, in the project navigator, select your project. Add the `lib*.a` from the RNFS project to your project's Build Phases ➜ Link Binary With Libraries. Click the .xcodeproj file you added before in the project navigator and go the Build Settings tab. Make sure 'All' is toggled on (instead of 'Basic'). Look for Header Search Paths and make sure it contains both `$(SRCROOT)/../rjc-react-native/React` and `$(SRCROOT)/../../React` - mark both as recursive.
 
 Run your project (Cmd+R)
 
@@ -81,8 +75,8 @@ Make alterations to the following files:
 
 ```gradle
 ...
-include ':react-native-fs'
-project(':react-native-fs').projectDir = new File(settingsDir, '../node_modules/react-native-fs/android')
+include ':rjc-react-native-fs'
+project(':rjc-react-native-fs').projectDir = new File(settingsDir, '../node_modules/rjc-react-native-fs/android')
 ```
 
 * `android/app/build.gradle`
@@ -91,7 +85,7 @@ project(':react-native-fs').projectDir = new File(settingsDir, '../node_modules/
 ...
 dependencies {
     ...
-    implementation project(':react-native-fs')
+    implementation project(':rjc-react-native-fs')
 }
 ```
 
@@ -100,7 +94,7 @@ dependencies {
   * For react-native below 0.19.0 (use `cat ./node_modules/react-native/package.json | grep version`)
 
 ```java
-import com.rnfs.RNFSPackage;  // <--- import
+import com.rjcrnfs.RNFSPackage;  // <--- import
 
 public class MainActivity extends Activity implements DefaultHardwareBackBtnHandler {
 
@@ -133,7 +127,7 @@ public class MainActivity extends Activity implements DefaultHardwareBackBtnHand
 
   * For react-native 0.19.0 and higher
 ```java
-import com.rnfs.RNFSPackage; // <------- add package
+import com.rjcrnfs.RNFSPackage; // <------- add package
 
 public class MainActivity extends ReactActivity {
    // ...
@@ -148,7 +142,7 @@ public class MainActivity extends ReactActivity {
 
   * For react-native 0.29.0 and higher ( in MainApplication.java )
 ```java
-import com.rnfs.RNFSPackage; // <------- add package
+import com.rjcrnfs.RNFSPackage; // <------- add package
 
 public class MainApplication extends Application implements ReactApplication {
    // ...
@@ -167,11 +161,11 @@ public class MainApplication extends Application implements ReactApplication {
 
 The `link` command also works for adding the native dependency on Windows:
 
-`react-native link react-native-fs`
+`react-native link rjc-react-native-fs`
 
 ### Adding Manually in Visual Studio
 
-Follow the instructions in the ['Linking Libraries'](https://github.com/Microsoft/react-native-windows/blob/master/docs/LinkingLibrariesWindows.md) documentation on the react-native-windows GitHub repo. For the first step of adding the project to the Visual Studio solution file, the path to the project should be `../node_modules/react-native-fs/windows/RNFS/RNFS.csproj`.
+Follow the instructions in the ['Linking Libraries'](https://github.com/Microsoft/react-native-windows/blob/master/docs/LinkingLibrariesWindows.md) documentation on the react-native-windows GitHub repo. For the first step of adding the project to the Visual Studio solution file, the path to the project should be `../node_modules/rjc-react-native-fs/windows/RNFS/RNFS.csproj`.
 
 ## Examples
 
@@ -210,7 +204,7 @@ RNFS.readDir(RNFS.MainBundlePath) // On Android, use "RNFS.DocumentDirectoryPath
 
 ```javascript
 // require the module
-var RNFS = require('react-native-fs');
+var RNFS = require('rjc-react-native-fs');
 
 // create a path you want to write to
 // :warning: on iOS, you cannot write into `RNFS.MainBundlePath`,
@@ -247,7 +241,7 @@ return RNFS.unlink(path)
 
 ```javascript
 // require the module
-var RNFS = require('react-native-fs');
+var RNFS = require('rjc-react-native-fs');
 
 var uploadUrl = 'http://requestb.in/XXXXXXX';  // For testing purposes, go to http://requestb.in/ and create your own link
 // create an array of objects of the files you want to upload

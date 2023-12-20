@@ -1,4 +1,4 @@
-package com.rnfs;
+package com.rjcrnfs;
 
 import android.content.res.AssetFileDescriptor;
 import android.content.res.AssetManager;

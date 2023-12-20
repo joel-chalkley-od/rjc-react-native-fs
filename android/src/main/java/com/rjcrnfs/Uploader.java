@@ -1,4 +1,4 @@
-package com.rnfs;
+package com.rjcrnfs;
 
 import android.os.AsyncTask;
 import android.webkit.MimeTypeMap;

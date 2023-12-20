@@ -1,4 +1,4 @@
-package com.rnfs;
+package com.rjcrnfs;
 
 class IORejectionException extends Exception {
     private String code;
